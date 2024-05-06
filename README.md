@@ -6,7 +6,9 @@ Non reasonable memory access out of bound is undefined behavior, but we provide 
 
 The errors reports will be very bad.
 
-Compilation `zig build` or `zig build -Doptimize=Release`, but it'd remove some brainfuck code verifications.
+Compilation `zig build` or `zig build -Doptimize=ReleaseFast`, but it'd remove some brainfuck code verifications.
+
+The executable will be `./zig-out/zbfc`
 
 Usage: `zfbc <brainfuck file>`, fasm output going to stdout.
 
