@@ -1,0 +1,1406 @@
+format ELF64 executable 3
+SYS_read = 0x0
+SYS_write = 0x1
+SYS_exit = 0x3c
+stdout = 0x1
+stdin = 0x0
+segment readable executable
+	mov rcx, buffer
+	add rcx, 200000
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff0:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end0
+	jmp ffffff0
+ffffff_end0:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff1:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end1
+	jmp ffffff1
+ffffff_end1:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff2:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end2
+	jmp ffffff2
+ffffff_end2:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff3:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end3
+	jmp ffffff3
+ffffff_end3:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff4:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end4
+	jmp ffffff4
+ffffff_end4:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff5:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end5
+	jmp ffffff5
+ffffff_end5:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff6:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end6
+	jmp ffffff6
+ffffff_end6:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff7:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end7
+	jmp ffffff7
+ffffff_end7:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff8:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end8
+	jmp ffffff8
+ffffff_end8:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff9:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end9
+	jmp ffffff9
+ffffff_end9:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff10:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end10
+	jmp ffffff10
+ffffff_end10:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff11:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end11
+	jmp ffffff11
+ffffff_end11:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff12:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end12
+	jmp ffffff12
+ffffff_end12:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff13:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end13
+	jmp ffffff13
+ffffff_end13:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff14:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end14
+	jmp ffffff14
+ffffff_end14:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff15:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end15
+	jmp ffffff15
+ffffff_end15:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff16:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end16
+	jmp ffffff16
+ffffff_end16:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff17:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end17
+	jmp ffffff17
+ffffff_end17:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff18:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end18
+	jmp ffffff18
+ffffff_end18:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff19:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end19
+	jmp ffffff19
+ffffff_end19:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff20:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end20
+	jmp ffffff20
+ffffff_end20:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff21:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end21
+	jmp ffffff21
+ffffff_end21:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff22:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end22
+	jmp ffffff22
+ffffff_end22:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff23:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end23
+	jmp ffffff23
+ffffff_end23:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff24:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end24
+	jmp ffffff24
+ffffff_end24:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff25:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end25
+	jmp ffffff25
+ffffff_end25:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff26:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end26
+	jmp ffffff26
+ffffff_end26:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff27:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end27
+	jmp ffffff27
+ffffff_end27:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff28:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end28
+	jmp ffffff28
+ffffff_end28:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff29:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end29
+	jmp ffffff29
+ffffff_end29:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff30:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end30
+	jmp ffffff30
+ffffff_end30:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff31:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end31
+	jmp ffffff31
+ffffff_end31:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff32:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end32
+	jmp ffffff32
+ffffff_end32:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff33:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end33
+	jmp ffffff33
+ffffff_end33:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff34:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end34
+	jmp ffffff34
+ffffff_end34:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff35:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end35
+	jmp ffffff35
+ffffff_end35:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff36:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end36
+	jmp ffffff36
+ffffff_end36:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff37:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end37
+	jmp ffffff37
+ffffff_end37:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff38:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end38
+	jmp ffffff38
+ffffff_end38:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff39:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end39
+	jmp ffffff39
+ffffff_end39:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff40:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end40
+	jmp ffffff40
+ffffff_end40:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff41:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end41
+	jmp ffffff41
+ffffff_end41:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff42:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end42
+	jmp ffffff42
+ffffff_end42:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff43:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end43
+	jmp ffffff43
+ffffff_end43:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff44:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end44
+	jmp ffffff44
+ffffff_end44:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff45:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end45
+	jmp ffffff45
+ffffff_end45:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff46:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end46
+	jmp ffffff46
+ffffff_end46:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff47:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end47
+	jmp ffffff47
+ffffff_end47:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff48:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end48
+	jmp ffffff48
+ffffff_end48:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff49:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end49
+	jmp ffffff49
+ffffff_end49:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff50:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end50
+	jmp ffffff50
+ffffff_end50:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff51:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end51
+	jmp ffffff51
+ffffff_end51:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff52:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end52
+	jmp ffffff52
+ffffff_end52:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff53:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end53
+	jmp ffffff53
+ffffff_end53:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff54:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end54
+	jmp ffffff54
+ffffff_end54:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff55:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end55
+	jmp ffffff55
+ffffff_end55:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff56:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end56
+	jmp ffffff56
+ffffff_end56:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff57:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end57
+	jmp ffffff57
+ffffff_end57:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff58:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end58
+	jmp ffffff58
+ffffff_end58:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff59:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end59
+	jmp ffffff59
+ffffff_end59:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+ffffff60:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end60
+	jmp ffffff60
+ffffff_end60:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	dec qword [rcx]
+ffffff61:
+	mov rax, qword [rcx]
+	test rax, rax
+	jz ffffff_end61
+	jmp ffffff61
+ffffff_end61:
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	push rcx
+	mov rax, SYS_read
+	mov rdi, stdout
+	mov rsi, rcx
+	mov rdx, 1
+	syscall
+	pop rcx
+	mov rax, SYS_exit
+	xor rdi, rdi
+	syscall
+segment readable writable
+	buffer rq 100000
