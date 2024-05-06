@@ -626,9 +626,11 @@ pub const Atom = union(enum) {
         switch (activeTag(self)) {
             .ADD_MUL => {
                 if (self.ADD_MUL[2] == 1) {
-                    print(w, "\tadd {s}, {s} [rcx+{d}]\n", .{ ax, p_size, self.ADD_MUL[1] * w_size });
+                    print(w, "\tmov {s}, {s} [rcx+{d}]\n", .{ ax, p_size, self.ADD_MUL[1] * w_size });
+                    print(w, "\tadd {s} [rcx+{d}], {s}\n", .{ p_size, self.ADD_MUL[0] * w_size, ax });
                 } else if (self.ADD_MUL[2] == -1) {
-                    print(w, "\tsub {s}, {s} [rcx+{d}]\n", .{ ax, p_size, self.ADD_MUL[1] * w_size });
+                    print(w, "\tmov {s}, {s} [rcx+{d}]\n", .{ ax, p_size, self.ADD_MUL[1] * w_size });
+                    print(w, "\tsub {s} [rcx+{d}], {s}\n", .{ p_size, self.ADD_MUL[0] * w_size, ax });
                 } else {
                     print(w, "\tmov {s}, {s} [rcx+{d}]\n", .{ ax, p_size, self.ADD_MUL[1] * w_size });
                     print(w, "\timul {s}, {d}\n", .{ ax, self.ADD_MUL[2] });
