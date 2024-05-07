@@ -4,7 +4,7 @@ const activeTag = std.meta.activeTag;
 const Tuple = std.meta.Tuple;
 const HashMap = std.AutoHashMap;
 
-const w_size = 8;
+const w_size = 1;
 const ax = if (w_size == 8) "rax" else if (w_size == 1) "al" else @compileError("wrong size of w_size");
 const p_size = if (w_size == 8) "qword" else if (w_size == 1) "byte" else @compileError("wrong size of w_size");
 
@@ -28,6 +28,7 @@ pub const Program = struct {
             .{ Program.has_continuous_while, Program.remove_continuous_while },
             .{ Program.can_reorder, Program.reorder },
             .{ Program.can_mulify, Program.mulify },
+            .{ Program.not_normal_offset, Program.normalise_offset },
         };
 
         while (to_change) {
@@ -40,6 +41,50 @@ pub const Program = struct {
             }
         }
         return self;
+    }
+
+    fn not_normal_offset(self: Program) bool {
+        if (self.value.items.len == 0)
+            return false;
+        const e = self.value.items[0];
+        const offset = e.get_offset();
+        if (offset) |val_e| {
+            return val_e != 0;
+        }
+        return false;
+    }
+
+    fn normalise_offset(self: *Program) Program {
+        self._normalise_offset(-self.value.items[0].get_offset().?);
+        return self.*;
+    }
+
+    fn _normalise_offset(self: *Program, offset: isize) void {
+        for (self.value.items) |*item| {
+            switch (item.*) {
+                .WHILE => {
+                    item.WHILE[1] += offset;
+                    item.WHILE[0]._normalise_offset(offset);
+                },
+                .PUT => {
+                    item.PUT[1] += offset;
+                },
+                .ADD => {
+                    item.ADD[1] += offset;
+                },
+                .READ => {
+                    item.READ += offset;
+                },
+                .PRINT => {
+                    item.PRINT += offset;
+                },
+                .ADD_MUL => {
+                    item.ADD_MUL[0] += offset;
+                    item.ADD_MUL[1] += offset;
+                },
+                .MOVE => {},
+            }
+        }
     }
 
     fn mulify(self: *Program) Program {
@@ -582,12 +627,11 @@ pub const Atom = union(enum) {
             if (activeTag(item) != .ADD)
                 return null;
         }
-
         // checks that the value in offset exists
         var found = false;
         for (p.value.items) |item| {
             if (item.ADD[1] == offset) {
-                if (item.ADD[0] != 1 and item.ADD[1] != 0)
+                if (item.ADD[0] != 1 and item.ADD[0] != -1)
                     return null;
                 found = true;
                 negate = item.ADD[0] == 1;
@@ -633,7 +677,7 @@ pub const Atom = union(enum) {
                     print(w, "\tsub {s} [rcx+{d}], {s}\n", .{ p_size, self.ADD_MUL[0] * w_size, ax });
                 } else {
                     print(w, "\tmov {s}, {s} [rcx+{d}]\n", .{ ax, p_size, self.ADD_MUL[1] * w_size });
-                    print(w, "\timul {s}, {d}\n", .{ ax, self.ADD_MUL[2] });
+                    print(w, "\timul {s}, {d}\n", .{ if (w_size == 1) "ax" else "rax", self.ADD_MUL[2] });
                     print(w, "\tadd {s} [rcx+{d}], {s}\n", .{ p_size, self.ADD_MUL[0] * w_size, ax });
                 }
             },
