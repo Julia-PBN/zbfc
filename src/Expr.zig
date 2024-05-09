@@ -3,6 +3,7 @@ const ArrayList = std.ArrayList;
 const activeTag = std.meta.activeTag;
 const Tuple = std.meta.Tuple;
 const HashMap = std.AutoHashMap;
+const inv2n = @import("Utils.zig").inv2n;
 
 const w_size = 1;
 const ax = if (w_size == 8) "rax" else if (w_size == 1) "al" else @compileError("wrong size of w_size");
@@ -621,7 +622,7 @@ pub const Atom = union(enum) {
         const w = self.WHILE;
         const offset = w[1];
         const p = w[0];
-        var negate = false;
+        var inv: isize = undefined;
         // checks that it's all add
         for (p.value.items) |item| {
             if (activeTag(item) != .ADD)
@@ -631,10 +632,10 @@ pub const Atom = union(enum) {
         var found = false;
         for (p.value.items) |item| {
             if (item.ADD[1] == offset) {
-                if (item.ADD[0] != 1 and item.ADD[0] != -1)
+                if (item.ADD[0] & 1 == 0)
                     return null;
                 found = true;
-                negate = item.ADD[0] == 1;
+                inv = -inv2n(item.ADD[0], w_size * 8);
             }
         }
         if (!found)
@@ -655,11 +656,7 @@ pub const Atom = union(enum) {
             if (item.ADD[1] == offset) {
                 continue;
             }
-            if (negate) {
-                prog.append(.{ .ADD_MUL = .{ item.ADD[1], offset, -item.ADD[0] } }) catch unreachable;
-            } else {
-                prog.append(.{ .ADD_MUL = .{ item.ADD[1], offset, item.ADD[0] } }) catch unreachable;
-            }
+            prog.append(.{ .ADD_MUL = .{ item.ADD[1], offset, item.ADD[0] * inv } }) catch unreachable;
         }
         prog.append(.{ .PUT = .{ 0, offset } }) catch unreachable;
         return prog;
